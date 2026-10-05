@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techfest IIT Bombay — Simulated Paradigm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- noise overlay -->
+<div class="noise-overlay"></div>
+
+<!-- nav -->
+<nav class="nav">
+  <div class="nav-logo">TECHFEST<span class="dot">.</span>SIM</div>
+  <div class="nav-links">
+    <a href="#briefing" class="nav-link" data-text="BRIEFING">BRIEFING</a>
+    <a href="#domains" class="nav-link" data-text="DOMAINS">DOMAINS</a>
+    <a href="#timeline" class="nav-link" data-text="PROTOCOL">PROTOCOL</a>
+    <a href="#jackin" class="nav-link nav-cta" data-text="JACK_IN">JACK_IN</a>
+  </div>
+  <div class="nav-status"><span class="status-dot"></span>SYSTEM ONLINE</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas id="webgl"></canvas>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="bracket">[</span> ASIA'S LARGEST SCI-TECH FESTIVAL <span class="bracket">]</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="glitch-text" data-text="WELCOME TO THE">WELCOME TO THE</span>
+      <span class="glitch-text hero-title-accent" data-text="SIMULATED PARADIGM">SIMULATED PARADIGM</span>
+    </h1>
+    <p class="hero-sub">
+      Every December, IIT Bombay compiles reality into three days of robotics, AI, and raw human ambition. This is your terminal into it.
+    </p>
+    <div class="hero-actions">
+      <a href="#jackin" class="btn btn-primary">
+        <span>ENTER THE GRID</span>
+      </a>
+      <a href="#domains" class="btn btn-ghost">
+        <span>VIEW DOMAINS</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>SCROLL TO DECOMPILE</span>
+    <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+  </div>
+  <div class="hero-coord top-left">LAT 19.1334° N</div>
+  <div class="hero-coord top-right">LON 72.9133° E</div>
+  <div class="hero-coord bottom-left">NODE://IITB-TECHFEST</div>
+</section>
+
+<!-- BRIEFING -->
+<section class="briefing" id="briefing">
+  <div class="section-head">
+    <div class="section-tag">01 // SYSTEM BRIEFING</div>
+    <h2 class="section-title">THE SIMULATION, <br>BY THE NUMBERS</h2>
+  </div>
+  <p class="briefing-copy">
+    Techfest isn't a college fest running in the background — it's the main process. Since 1998, a student-run core team has been compiling a festival that pulls in builders, hackers, and dreamers from every state and a few dozen countries besides. Robowars, drone races, lecture series with ISRO chairmen, and an exhibition floor that's hosted humanoid robots — it all runs on the same kernel: people who'd rather build the future than wait for it.
+  </p>
+  <div class="stats-grid">
+    <div class="stat-card" data-value="180" data-suffix="K+">
+      <div class="stat-number">0</div>
+      <div class="stat-label">ANNUAL FOOTFALL</div>
+    </div>
+    <div class="stat-card" data-value="2500" data-suffix="+">
+      <div class="stat-number">0</div>
+      <div class="stat-label">PARTNER COLLEGES</div>
+    </div>
+    <div class="stat-card" data-value="500" data-suffix="+">
+      <div class="stat-number">0</div>
+      <div class="stat-label">INTERNATIONAL COLLEGES</div>
+    </div>
+    <div class="stat-card" data-value="27" data-suffix="">
+      <div class="stat-number">0</div>
+      <div class="stat-label">EDITIONS RUN</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="domains" id="domains">
+  <div class="section-head">
+    <div class="section-tag">02 // SELECT YOUR DOMAIN</div>
+    <h2 class="section-title">PICK A BRANCH<br>OF THE SIMULATION</h2>
+  </div>
+  <div class="domains-grid" id="domainsGrid">
+    <!-- injected by JS -->
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div class="section-head">
+    <div class="section-tag">03 // EXECUTION PROTOCOL</div>
+    <h2 class="section-title">HOW THE THREE DAYS<br>COMPILE</h2>
+  </div>
+  <div class="timeline-wrap">
+    <svg class="timeline-svg" viewBox="0 0 4 1000" preserveAspectRatio="none">
+      <line class="timeline-line-bg" x1="2" y1="0" x2="2" y2="1000"></line>
+      <line class="timeline-line-fg" id="timelineFg" x1="2" y1="0" x2="2" y2="1000"></line>
+    </svg>
+    <div class="timeline-items">
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 00 // PRE-LAUNCH</div>
+          <h3>Workshops &amp; Arrivals</h3>
+          <p>Delegates from 2500+ colleges check into the IIT Bombay campus. Hands-on workshops spin up across robotics, AI, and aerospace before the main event even begins.</p>
+        </div>
+      </div>
+      <div class="timeline-item reverse">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 01 // BOOT SEQUENCE</div>
+          <h3>Competitions Go Live</h3>
+          <p>Robowars, drone challenges, and coding battles kick off in parallel across the venue. The exhibition floor opens — international tech on full display.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 02 // PEAK LOAD</div>
+          <h3>Lectures &amp; Technoholix</h3>
+          <p>Industry leaders and scientists take the lecture stage by day. By night, Technoholix turns the campus into a full-scale concert under the stars.</p>
+        </div>
+      </div>
+      <div class="timeline-item reverse">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 03 // FINAL COMPILE</div>
+          <h3>Finals &amp; Closing</h3>
+          <p>Grand finales decide the winners across every competition track. The simulation closes — until the next edition compiles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JACK IN / CTA -->
+<section class="jackin" id="jackin">
+  <canvas id="webglCta"></canvas>
+  <div class="jackin-content">
+    <div class="section-tag center">04 // FINAL PROMPT</div>
+    <h2 class="jackin-title glitch-text" data-text="READY TO JACK IN?">READY TO JACK IN?</h2>
+    <p class="jackin-sub">Reach out through your campus ambassador, or compile your own path to IIT Bombay this December.</p>
+    <div class="hero-actions center">
+      <a href="https://techfest.org" target="_blank" rel="noopener" class="btn btn-primary">
+        <span>VISIT TECHFEST.ORG</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-row">
+    <div class="nav-logo">TECHFEST<span class="dot">.</span>SIM</div>
+    <div class="footer-meta">CAMPUS AMBASSADOR BUILD // NKOCET SOLAPUR // <span id="liveYear"></span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
